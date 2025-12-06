@@ -1,0 +1,13 @@
+ Том в устройстве C не имеет метки.
+ Серийный номер тома: 8ACE-F02F
+
+ Содержимое папки C:\Windows
+
+07.12.2019  12:31    <DIR>          Media
+07.12.2019  12:14    <DIR>          Downloaded Program Files
+15.06.2025  14:44    <DIR>          Fonts
+14.09.2025  10:50    <DIR>          Installer
+07.03.2025  13:19    <DIR>          BitLockerDiscoveryVolumeContents
+21.09.2025  18:13            67 584 bootstat.dat
+               1 файлов         67 584 байт
+               5 папок  133 640 310 784 байт свободно
