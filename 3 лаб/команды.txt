@@ -1,0 +1,32 @@
+1(4).3
+Get-ChildItem -Directory | Where-Object {$_.name -match '[ST]$'}| Sort-Object | Out-File 'D:\Учеба\ОССТ\3 лаб\1(4).3.txt'
+
+2(5)
+$свойства = Get-Process | Get-Member -MemberType Property
+$свойства.Count
+$свойства | Out-File 'D:\Учеба\ОССТ\3 лаб\2(5).txt'
+
+3(6).3
+Get-Process | Where-Object { $_.Id -gt 100 } | Sort-Object TotalProcessorTime | Select-Object ProcessName, Id, PriorityClass, UserProcessorTime, TotalProcessorTime |
+Out-File 'D:\Учеба\ОССТ\3 лаб\3(6).3.txt'
+
+4(7).3
+Get-Process | Sort-Object TotalProcessorTime |
+ConvertTo-Html -Property ProcessName, Id, PriorityClass, UserProcessorTime, TotalProcessorTime > 'D:\Учеба\ОССТ\3 лаб\4(7).htm'
+
+5(8) 
+Get-ChildItem -Path "C:\Windows*" -Recurse -Include *.jpg,*.bmp | Measure-Object -Property Length -Sum
+
+6(9)
+Get-wmiobject -Class Win32_Processor | Format-list *
+
+7(10)
+$mdir = (Measure-Command {dir}).TotalSeconds
+$mps = (Measure-Command {ps}).TotalSeconds
+$mdir | Measure-Object -Maximum -Minimum -Average
+$mps | Measure-Object -Maximum -Minimum -Average
+
+8(11)
+Get-Process | Group-Object -Property ProcessName | Where-Object {$_.Count -gt 1} | Select-Object Name, Count
+
+Get-Process | Sort-Object -Property StartTime -Descending | Select-Object -First 1 -Property ProcessName, StartTime
